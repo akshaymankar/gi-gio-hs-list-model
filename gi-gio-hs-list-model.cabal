@@ -3,10 +3,22 @@ name:               gi-gio-hs-list-model
 version:            0.1.0.0
 author:             Akshay Mankar
 maintainer:         itsakshaymankar@gmail.com
+license:            LGPL-2.1-only
+license-file:       LICENSE
 extra-source-files: CHANGELOG.md
                   , README.md
                   , cbits/GiGioHsListStore.h
                   , cbits/GiGioHsListItem.h
+
+synopsis:           Haskell implementation of GListModel interface from gi-gio
+description:        Haskell implementation of GListModel interface from gi-gio
+category:           Graphics
+
+homepage:           https://git.coop/akshay/gi-gio-hs-list-model#gi-gio-hs-list-model
+bug-reports:        https://git.coop/akshay/gi-gio-hs-list-model/-/issues
+source-repository head
+    type:             git
+    location:         https://git.coop/akshay/gi-gio-hs-list-model.git
 
 library
     hs-source-dirs:   src
