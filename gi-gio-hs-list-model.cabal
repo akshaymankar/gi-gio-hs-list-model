@@ -4,6 +4,7 @@ version:            0.1.0.0
 author:             Akshay Mankar
 maintainer:         itsakshaymankar@gmail.com
 extra-source-files: CHANGELOG.md
+                  , README.md
                   , cbits/GiGioHsListStore.h
                   , cbits/GiGioHsListItem.h
 
