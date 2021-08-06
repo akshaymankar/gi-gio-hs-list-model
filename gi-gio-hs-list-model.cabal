@@ -19,13 +19,16 @@ library
                     , Data.GI.Gio.ListModel.SeqStore
     c-sources:        cbits/GiGioHsListStore.c
                     , cbits/GiGioHsListItem.c
-    if flag(hlshack)
-      include-dirs:   cbits
-                    , hls-hack-include
-    else
-      include-dirs:   cbits
+    -- if flag(hlshack)
+    --   include-dirs:   cbits
+    --                 -- ln -s dist-newstyle/build/x86_64-linux/ghc-8.10.4/gi-gio-hs-list-model-<version>/build hls-hack-include
+    --                 , hls-hack-include
+    -- else
+    include-dirs:   cbits
 
-flag hlshack
-    description:      Hack for HLS
-    default:          False
-    manual:           True
+-- Required to get HLS and cabal repl to work. But hackage doesn't like it if
+-- the include-dir is missing, so this flag cannot live here.
+-- flag hlshack
+--     description:      Hack for HLS
+--     default:          False
+--     manual:           True
