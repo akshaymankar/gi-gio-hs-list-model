@@ -11,7 +11,7 @@ extra-source-files: CHANGELOG.md
                   , cbits/GiGioHsListItem.h
 
 synopsis:           Haskell implementation of GListModel interface from gi-gio
-description:        Haskell implementation of GListModel interface from gi-gio
+description:        Please see the README at: https://git.coop/akshay/gi-gio-hs-list-model#gi-gio-hs-list-model 
 category:           Graphics
 
 homepage:           https://git.coop/akshay/gi-gio-hs-list-model#gi-gio-hs-list-model
