@@ -33,10 +33,9 @@ createEmptyItem listItem = do
 populateItem :: Gtk.ListItem -> IO ()
 populateItem listItem = do
   item <- fromJust <$> get listItem #item
-  storeItem <- fromJust <$> Gtk.castTo CustomStoreItem item
-  person <- deRefCustomStoreItem storeItem
+  person <- fromJust <$> CustomStoreItem.fromObject @Person storeItem
 
   child <- fromJust <$> get convListItem #child
   label <- fromJust <$> Gtk.castTo Gtk.Label child
-  set label [ #label := name person <> " " <> Text.pack (show (age person)) ]
+  set label [ #label := name person <> ", " <> Text.pack (show (age person)) ]
 ```
