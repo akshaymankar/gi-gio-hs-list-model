@@ -1,9 +1,11 @@
 # gi-gio-hs-list-model
 
 This library implements the `GListModelInterface` which is required for using
-`ListView`. The library can be used in two ways: (1) use the provided `SeqStore`
-which uses a `Seq` underneath to store the list, or (2) implement functions
-required for `CustomStoreImpl` in the way `SeqStore` does.
+`ListView`. The library can be used in two ways:
+1. use the provided `SeqStore` which uses a `Seq` underneath to store the list,
+   or
+2. implement functions required for `CustomStoreImpl` in the way `SeqStore`
+   does.
 
 ## Example use of `SeqStore` with `ListView`
 
