@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               gi-gio-hs-list-model
-version:            0.1.0.0
+version:            0.1.0.1
 author:             Akshay Mankar
 maintainer:         itsakshaymankar@gmail.com
 license:            LGPL-2.1-only

@@ -1,6 +1,6 @@
 #include "GiGioHsListStore.h"
 
-#define DEBUG
+/* #define DEBUG */
 
 #ifdef DEBUG
 #define WHEN_DEBUG(a) a
@@ -8,7 +8,6 @@
 #define WHEN_DEBUG(a)
 #endif
 
-static void     gi_gio_hs_list_store_init            (GiGioHsListStore      *store);
 static void     gi_gio_hs_list_store_class_init      (GiGioHsListStoreClass *klass);
 static void     gi_gio_hs_list_store_list_model_init (GListModelInterface *iface);
 static void     gi_gio_hs_list_store_finalize        (GObject             *object);
@@ -42,7 +41,7 @@ gi_gio_hs_list_store_get_type (void)
       NULL,              /* class_data */
       sizeof (GiGioHsListStore),
       0,                 /* n_preallocs */
-      (GInstanceInitFunc) gi_gio_hs_list_store_init
+      NULL
     };
 
     static const GInterfaceInfo list_model_info =
@@ -101,23 +100,6 @@ gi_gio_hs_list_store_list_model_init (GListModelInterface *iface)
   iface -> get_n_items   = gi_gio_hs_list_store_get_n_items;
   iface -> get_item      = gi_gio_hs_list_store_get_item;
 }
-
-/**
- *
- *  gi_gio_hs_list_store_init: this is called everytime a new custom list object
- *                             instance is created (we do that in
- *                             gi_gio_hs_list_store_new). Initialise the list
- *                             structure's fields here.
- *
- **/
-static void
-gi_gio_hs_list_store_init (GiGioHsListStore *store)
-{
-  WHEN_DEBUG(g_debug("calling gi_gio_hs_list_store_init\t\t(%p)\n", store));
-
-  store->stamp = g_random_int();  /* Random int to check whether an iter belongs to our model */
-}
-
 
 /**
  *
@@ -230,22 +212,4 @@ HsStablePtr gi_gio_hs_list_store_get_priv (GiGioHsListStore *store)
 {
   g_return_val_if_fail(GIO_GIO_HS_IS_LIST_STORE(store), NULL);
   return store->priv;
-}
-
-gint
-gi_gio_hs_list_store_get_stamp (GiGioHsListStore *store)
-{
-  g_return_val_if_fail(GIO_GIO_HS_IS_LIST_STORE(store), 0);
-  return store->stamp;
-}
-
-void
-gi_gio_hs_list_store_increment_stamp (GiGioHsListStore *store)
-{
-  g_return_if_fail(GIO_GIO_HS_IS_LIST_STORE(store));
-  do
-    {
-      store->stamp++;
-    }
-  while (store->stamp == 0);
 }
