@@ -24,8 +24,6 @@ struct _GiGioHsListStore
   /*< private >*/
   HsStablePtr     impl;        /* a StablePtr CustomStore */
   HsStablePtr     priv;        /* a StablePtr to private data */
-
-  gint            stamp;       /* Random integer to check whether an iter belongs to our model */
 };
 
 struct _GiGioHsListStoreClass
@@ -37,8 +35,6 @@ GType             gi_gio_hs_list_store_get_type (void) G_GNUC_CONST;
 GiGioHsListStore *gi_gio_hs_list_store_new (HsStablePtr, HsStablePtr);
 HsStablePtr       gi_gio_hs_list_store_get_impl  (GiGioHsListStore *);
 HsStablePtr       gi_gio_hs_list_store_get_priv  (GiGioHsListStore *);
-gint              gi_gio_hs_list_store_get_stamp (GiGioHsListStore *);
-void              gi_gio_hs_list_store_increment_stamp (GiGioHsListStore *);
 
 G_END_DECLS
 
