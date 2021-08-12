@@ -1,6 +1,6 @@
 #include "GiGioHsListStore.h"
 
-#define DEBUG
+/* #define DEBUG */
 
 #ifdef DEBUG
 #define WHEN_DEBUG(a) a
